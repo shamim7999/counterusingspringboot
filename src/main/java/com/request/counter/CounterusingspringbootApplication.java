@@ -7,7 +7,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class CounterusingspringbootApplication {
 
     public static void main(String[] args) {
+
         SpringApplication.run(CounterusingspringbootApplication.class, args);
+        System.out.println("Hello");
     }
 
 }
