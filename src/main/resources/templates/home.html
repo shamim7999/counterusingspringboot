@@ -8,15 +8,10 @@
 
 <div class="text-center">
 
-    <h1> Hello Home! </h1>
+    <h1 th:style="'color: ' + ${color}">Hello Home!</h1>
     <br>
-    <h1 th:if="${counter%7 == 0}" th:style="'color: purple;'" th:text="${counter}">Count is: ${counter}</h1>
-    <h1 th:if="${counter%7 == 1}" th:style="'color: blue;'" th:text="${counter}">Count is: ${counter}</h1>
-    <h1 th:if="${counter%7 == 2}" th:style="'color: indigo;'" th:text="${counter}">Count is: ${counter}</h1>
-    <h1 th:if="${counter%7 == 3}" th:style="'color: green;'" th:text="${counter}">Count is: ${counter}</h1>
-    <h1 th:if="${counter%7 == 4}" th:style="'color: yellow;'" th:text="${counter}">Count is: ${counter}</h1>
-    <h1 th:if="${counter%7 == 5}" th:style="'color: orange;'" th:text="${counter}">Count is: ${counter}</h1>
-    <h1 th:if="${counter%7 == 6}" th:style="'color: red;'" th:text="${counter}">Count is: ${counter}</h1>
+    <h1 th:style="'color: ' + ${color}" th:text="'Count is: ' + ${counter}"></h1>
+
 </div>
 
 
@@ -28,7 +23,7 @@
             <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
         </div>
         <div class="form-group">
-            <label for="exampleInputPassword1">Time</label>
+            <label for="exampleInputPassword1">Local Date Time</label>
             <input type="text" th:value="${localDateTime}" class="form-control" id="exampleInputPassword1" placeholder="Password">
         </div>
         <div class="form-group">
@@ -40,10 +35,11 @@
             <input type="text" th:value="${localTime}" class="form-control" id="exampleInputPassword3" placeholder="Password">
         </div>
         <div class="text-center">
-            <a th:href="@{${pageContext.request.contextPath}/hello}"><button  type="submit" class="btn btn-primary">Smash</button></a>
+            <a th:href="@{${pageContext.request.contextPath}/hello}"><button  type="submit" th:class="'btn btn-'+${type}">Smash</button></a>
         </div>
     </form>
 </div>
+
 
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>

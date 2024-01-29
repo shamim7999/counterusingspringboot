@@ -7,12 +7,20 @@ import org.springframework.web.bind.annotation.GetMapping;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
+import java.util.List;
 
 @Controller
 public class MyController {
 
     private int cnt=0;
+    private List<String> colors = List.of(
+                "purple", "blue", "indigo", "green", "yellow", "orange", "red",
+                "pink", "magenta", "black", "#DFFF00", "#0B5345"
+            );
 
+    private List<String> buttons = List.of(
+            "primary", "danger", "success", "secondary", "warning", "info", "dark"
+    );
     @GetMapping("/")
     public String dispatchHandler() {
         return "index";
@@ -20,10 +28,14 @@ public class MyController {
 
     @GetMapping("/hello")
     public String requestCounterHandler(Model model) {
+        int colorListSize = colors.size();
+        int buttonListSize = buttons.size();
         model.addAttribute("counter", this.cnt++);
         model.addAttribute("localDateTime", LocalDateTime.now());
         model.addAttribute("localDate", LocalDate.now());
         model.addAttribute("localTime", LocalTime.now());
+        model.addAttribute("color", colors.get(this.cnt%colorListSize));
+        model.addAttribute("type", buttons.get(this.cnt%buttonListSize));
         return "home";
     }
 }
