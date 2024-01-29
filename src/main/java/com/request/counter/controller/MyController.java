@@ -4,7 +4,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.LocalTime;
 
 @Controller
 public class MyController {
@@ -20,6 +22,8 @@ public class MyController {
     public String requestCounterHandler(Model model) {
         model.addAttribute("counter", this.cnt++);
         model.addAttribute("localDateTime", LocalDateTime.now());
+        model.addAttribute("localDate", LocalDate.now());
+        model.addAttribute("localTime", LocalTime.now());
         return "home";
     }
 }

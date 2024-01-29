@@ -7,9 +7,12 @@
 <body>
 
 <div class="text-center">
-    <h3 th:if="${counter < 10}" th:style="'color: black;'" th:text="${counter}">Count is: ${counter}</h3>
-    <h3 th:if="${counter >= 10 && counter<20}" th:style="'color: red;'" th:text="${counter}">Count is: ${counter}</h3>
-    <h3 th:if="${counter >= 20}" th:style="'color: green;'" th:text="${counter}">Count is: ${counter}</h3>
+
+    <h1> Hello Home! </h1>
+    <br>
+    <h1 th:if="${counter < 10}" th:style="'color: black;'" th:text="${counter}">Count is: ${counter}</h1>
+    <h1 th:if="${counter >= 10 && counter<20}" th:style="'color: red;'" th:text="${counter}">Count is: ${counter}</h1>
+    <h1 th:if="${counter >= 20}" th:style="'color: green;'" th:text="${counter}">Count is: ${counter}</h1>
 </div>
 
 
@@ -24,7 +27,17 @@
             <label for="exampleInputPassword1">Time</label>
             <input type="text" th:value="${localDateTime}" class="form-control" id="exampleInputPassword1" placeholder="Password">
         </div>
-        <a th:href="@{${pageContext.request.contextPath}/hello}"><button type="submit" class="btn btn-primary">Smash</button></a>
+        <div class="form-group">
+            <label for="exampleInputPassword2">Local Date</label>
+            <input type="text" th:value="${localDate}" class="form-control" id="exampleInputPassword2" placeholder="Password">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputPassword3">Local Time</label>
+            <input type="text" th:value="${localTime}" class="form-control" id="exampleInputPassword3" placeholder="Password">
+        </div>
+        <div class="text-center">
+            <a th:href="@{${pageContext.request.contextPath}/hello}"><button type="submit" class="btn btn-primary">Smash</button></a>
+        </div>
     </form>
 </div>
 
