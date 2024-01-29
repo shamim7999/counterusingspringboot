@@ -10,9 +10,13 @@
 
     <h1> Hello Home! </h1>
     <br>
-    <h1 th:if="${counter < 10}" th:style="'color: black;'" th:text="${counter}">Count is: ${counter}</h1>
-    <h1 th:if="${counter >= 10 && counter<20}" th:style="'color: red;'" th:text="${counter}">Count is: ${counter}</h1>
-    <h1 th:if="${counter >= 20}" th:style="'color: green;'" th:text="${counter}">Count is: ${counter}</h1>
+    <h1 th:if="${counter%7 == 0}" th:style="'color: purple;'" th:text="${counter}">Count is: ${counter}</h1>
+    <h1 th:if="${counter%7 == 1}" th:style="'color: blue;'" th:text="${counter}">Count is: ${counter}</h1>
+    <h1 th:if="${counter%7 == 2}" th:style="'color: indigo;'" th:text="${counter}">Count is: ${counter}</h1>
+    <h1 th:if="${counter%7 == 3}" th:style="'color: green;'" th:text="${counter}">Count is: ${counter}</h1>
+    <h1 th:if="${counter%7 == 4}" th:style="'color: yellow;'" th:text="${counter}">Count is: ${counter}</h1>
+    <h1 th:if="${counter%7 == 5}" th:style="'color: orange;'" th:text="${counter}">Count is: ${counter}</h1>
+    <h1 th:if="${counter%7 == 6}" th:style="'color: red;'" th:text="${counter}">Count is: ${counter}</h1>
 </div>
 
 
@@ -36,7 +40,7 @@
             <input type="text" th:value="${localTime}" class="form-control" id="exampleInputPassword3" placeholder="Password">
         </div>
         <div class="text-center">
-            <a th:href="@{${pageContext.request.contextPath}/hello}"><button type="submit" class="btn btn-primary">Smash</button></a>
+            <a th:href="@{${pageContext.request.contextPath}/hello}"><button  type="submit" class="btn btn-primary">Smash</button></a>
         </div>
     </form>
 </div>
