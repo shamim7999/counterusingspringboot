@@ -1,5 +1,6 @@
 package com.request.counter.controller;
 
+import com.request.counter.helper.DateFormatter;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -30,10 +31,12 @@ public class MyController {
     public String requestCounterHandler(Model model) {
         int colorListSize = colors.size();
         int buttonListSize = buttons.size();
+        LocalDateTime localDateTime = LocalDateTime.now();
         model.addAttribute("counter", this.cnt++);
-        model.addAttribute("localDateTime", LocalDateTime.now());
+        model.addAttribute("localDateTime", localDateTime);
         model.addAttribute("localDate", LocalDate.now());
         model.addAttribute("localTime", LocalTime.now());
+        model.addAttribute("formattedDate", DateFormatter.convertToYearTimeDay(localDateTime));
         model.addAttribute("color", colors.get(this.cnt%colorListSize));
         model.addAttribute("type", buttons.get(this.cnt%buttonListSize));
         return "home";
