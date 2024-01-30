@@ -9,7 +9,7 @@ public class CounterusingspringbootApplication {
     public static void main(String[] args) {
 
         SpringApplication.run(CounterusingspringbootApplication.class, args);
-        System.out.println("Hello");
+        System.out.println("Hellooo!");
     }
 
 }
